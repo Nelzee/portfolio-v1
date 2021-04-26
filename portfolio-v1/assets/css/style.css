@@ -1,0 +1,459 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #0b092e;
+  overflow-x: hidden;
+}
+.scroll__lock {
+  overflow: hidden;
+}
+.nav__menu {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+  width: 100%;
+  height: 70px;
+  z-index: 10;
+}
+.nav__menu ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 660px;
+  height: 100%;
+}
+
+.nav__menu ul li {
+  height: 100%;
+}
+
+.nav__menu ul li a {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-family: "franklin Gothic";
+  color: #0b092e;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.highlight {
+  border-bottom: 6px solid #1ae5ae;
+}
+
+.left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60vw;
+  height: 60vh;
+  background-image: url("/assets/img/left.svg");
+  background-position: left bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vw;
+  height: 60vh;
+  background-image: url("/assets/img/right.svg");
+  background-position: right top;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+header {
+  position: relative;
+  height: 100vh;
+}
+.header__text {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+}
+
+.header__text h1 {
+  font-size: 87px;
+  color: #dee3a8;
+  font-family: "franklin Gothic";
+}
+
+.header__text P {
+  font-size: 40px;
+  font-family: "Gabriola";
+  color: #dee3a8;
+}
+.header__text a {
+  text-align: center;
+  font-size: 30px;
+  font-family: "Gabriola";
+  background-color: #1ae5ae;
+  color: #0b092e;
+  width: 166px;
+  height: 46px;
+}
+
+.social__links {
+  position: fixed;
+  bottom: 0;
+  right: 7%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 0;
+}
+
+.social__links .line {
+  width: 2px;
+  height: 70px;
+  background-color: white;
+}
+.social__links img {
+  height: 20px;
+  width: 20px;
+  color: #dee3a8;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    position: relative;
+  }
+
+  .nav__menu {
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60%;
+    width: 90%;
+    transition: all 0.4s ease;
+    z-index: 200;
+  }
+  .nav__menu.active {
+    top: 10%;
+  }
+  .nav__menu ul {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .toggle {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    z-index: 19;
+  }
+  .toggle span {
+    display: block;
+    height: 3px;
+    width: 28px;
+    background-color: white;
+  }
+  .toggle span:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  .header__text {
+    position: absolute;
+    top: 25%;
+    left: 12%;
+  }
+
+  .header__text h1 {
+    font-size: 78px;
+    color: #dee3a8;
+  }
+
+  .header__text P {
+    font-size: 36px;
+    font-family: "Gabriola";
+    color: #dee3a8;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .social__links {
+    position: absolute;
+    top: 0;
+    left: 7%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+@media screen and (max-width: 600px) {
+  .left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60vw;
+    height: 60vh;
+    background-image: url("/assets/img/mobileleft.svg");
+    background-position: left bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60vw;
+    height: 60vh;
+    background-image: url("/assets/img/mobileright.svg");
+    background-position: right top;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .header__text h1 {
+    font-size: 60px;
+    color: #dee3a8;
+  }
+
+  .header__text P {
+    font-size: 26px;
+    font-family: "Gabriola";
+    color: #dee3a8;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .header__text {
+    top: 30%;
+    left: 8%;
+    height: 140px;
+  }
+  .header__text h1 {
+    font-size: 48px;
+    color: #dee3a8;
+  }
+
+  .header__text P {
+    font-size: 22px;
+    font-family: "Gabriola";
+    color: #dee3a8;
+  }
+  .header__text a {
+    height: 30px;
+    width: 120px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header__text {
+    height: 115px;
+  }
+
+  .header__text h1 {
+    font-size: 41px;
+  }
+
+  .header__text P {
+    font-size: 18px;
+  }
+}
+
+.section__title {
+  padding-top: 50px;
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  font-family: "franklin Gothic";
+  color: #dee3a8;
+}
+
+.article {
+  max-width: 1050px;
+  margin: 70px auto;
+  color: #dee3a8;
+}
+.featureProject h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "franklin Gothic";
+  font-size: 1.5rem;
+}
+.featureProject h3::after {
+  content: "";
+  display: inline-block;
+  height: 3px;
+  width: 80%;
+  background-color: #dee3a8;
+}
+.odd .projectInfo {
+  display: flex;
+  padding-top: 70px;
+}
+.even .projectInfo {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top: 70px;
+}
+.projectInfo .project__text {
+  background-color: #03021a;
+  height: 100%;
+  padding: 20px;
+}
+.even .projectInfo .project__text {
+  text-align: right;
+}
+.project__header {
+  display: flex;
+  justify-content: space-between;
+}
+.project__header h4 {
+  padding-bottom: 40px;
+  font-size: 2rem;
+  font-family: "franklin Gothic";
+}
+.project__header a img {
+  width: 35px;
+  height: 35px;
+}
+.project__text p {
+  font-size: 1.7rem;
+  font-family: "Gabriola";
+  line-height: 25px;
+}
+.projectInfo img {
+  height: 275px;
+  opacity: 0.4;
+}
+
+@media screen and (max-width: 768px) {
+  .article {
+    max-width: 90vw;
+  }
+
+  .odd .projectInfo,
+  .even .projectInfo {
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+  }
+
+  .projectInfo img {
+    height: initial;
+  }
+  .project__text p {
+    font-size: 1.2rem;
+    font-family: "Gabriola";
+    line-height: 25px;
+  }
+}
+.about__me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about__me p {
+  font-size: 1.7rem;
+}
+.about__me ul {
+  padding-top: 50px;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  color: #1ae5ae;
+  font-size: 1.7rem;
+  text-decoration: overline;
+}
+
+@media screen and (max-width: 768px) {
+  .about__me p {
+    font-size: 1.2rem;
+  }
+  .about__me ul {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+}
+
+.contact__me {
+  width: 100vw;
+}
+
+.send__message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.send__message input,
+.send__message label,
+.send__message textarea {
+  font-family: "franklin Gothic";
+  font-size: 1.5rem;
+}
+.send__message input,
+.send__message textarea {
+  height: 40px;
+  border-radius: none;
+  width: 70%;
+}
+
+.send__message label,
+.send__message textarea {
+  display: block;
+}
+
+.send__message textarea {
+  height: 200px;
+}
+
+.send__message .submit {
+  margin: 10px 0;
+  background-color: #1ae5ae;
+  border: none;
+  color: #03021a;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .send__message input,
+  .send__message label,
+  .send__message textarea {
+    font-family: "franklin Gothic";
+    font-size: 1rem;
+  }
+
+  .send__message input,
+  .send__message textarea {
+    height: 40px;
+    border-radius: none;
+    width: 90%;
+  }
+  .send__message textarea {
+    height: 150px;
+  }
+}
+
+footer {
+  height: 70px;
+  background-color: #03021a;
+}
+
+footer h2 {
+  padding: 10px;
+  text-align: center;
+  font-size: 1.7rem;
+  font-family: "franklin Gothic";
+  color: #dee3a8;
+}
